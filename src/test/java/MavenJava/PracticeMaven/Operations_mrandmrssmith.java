@@ -1,6 +1,7 @@
 package MavenJava.PracticeMaven;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -34,11 +35,11 @@ public class Operations_mrandmrssmith {
 			
 		sp.SignInClick();
 		
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		
 		js.executeScript("window.scrollBy(0,400)");
 		//new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("div.dayPicker__transitionContainer.dayPicker__transitionContainer--horizontal")));
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		
 		dp.SearchCountry("Singapore");
 	
